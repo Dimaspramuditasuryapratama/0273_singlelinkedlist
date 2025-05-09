@@ -9,12 +9,12 @@ class Node
         Node *next;
 };
 
-class SinglelLinkedList
+class LinkedList
 {
     Node *START;
 
     public:
-        SingleLinkedList()
+        LinkedList()
         {
             START = NULL;
         }
@@ -38,5 +38,21 @@ class SinglelLinkedList
                 START = nodeBaru;
                 return;
             }
+            Node *previous = START;
+            Node *current = START;
+    
+            while ((current != NULL) && (nim >= current->noMhs))
+            {
+                if (nim == current->noMhs)
+                {
+                    cout << "\nDuplikasi noMhs tidak diijinkan\n";
+                    return;
+                }
+                previous = current;
+                current = current->next;
+            }
+            nodeBaru->next = current;
+            previous->next = nodeBaru;
+            
         }
-}
+};
