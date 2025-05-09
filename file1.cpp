@@ -170,6 +170,14 @@ int main()
                             cout << "\n";
                     }
         }
+        break;
+        case '5':
+        {}
+        break;
+        default:
+        {cout << "Pilihan !." << endl;
+        }
+        break;
         }
         
     }while (ch != '5');
